@@ -20,7 +20,7 @@ function debounce(func, timeout) {
 function maybeResizeHeight(element) {
     // if (element.scrollHeight !== mainInputScrollHeight) {
         element.style.height = "auto";
-        element.style.height = (element.scrollHeight + 2) + "px";
+        element.style.height = (element.scrollHeight + 5) + "px";
     // }
 }
 

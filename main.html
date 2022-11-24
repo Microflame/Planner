@@ -18,8 +18,11 @@
             >>> 2023>17>05 [Sunday] <a href="">Edit</a>
         </div>
         <div>
-            <span class="entry new_task_entry">&nbsp;<span class="entry_prefix">+</span>
-                Сделать боковую панель&nbsp;</span>
+            <div class="entry new_task_entry">
+                <span class="entry_prefix">+</span>
+                Сделать боковую панель
+                <span>| !0 | no solution</span>
+            </div>
             
             <div>
                 Это простой текст
@@ -34,15 +37,28 @@
                 Благобдаря этому мы можем смотреть на то, как работает автоперенос
                 и лучше подбирать параметры отображения.
             </div>
+
+            <div class="entry info_entry">
+                <span class="entry_prefix">#</span>
+                Это заметка. Самый простой элемент
+            </div>
+
+            <div class="entry cancel_entry">
+                <span class="entry_prefix">-</span>
+                Это отмена задачи
+                <span><a href="">&#10548</a></span>
+            </div>
         </div>
 
+
+        <div style="position: relative;">
+            <!-- <div style="position: absolute; top: 150px; left: 0px; width: 100px;  height: 100px; background: red;"></div> -->
+            <textarea oninput="onMainInput(this)" id="input_field"></textarea>
+        </div>
     </div>
     
-<!-- 
-    <div style="position: relative;">
-        <div style="position: absolute; top: 150px; left: 0px; width: 100px;  height: 100px; background: red;"></div>
-        <textarea oninput="onMainInput(this)" id="input_field"></textarea>
-    </div> -->
+
+
 
 </body>
 

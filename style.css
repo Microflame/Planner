@@ -1,12 +1,13 @@
 body {
   margin: 5ch;
+  overflow-y: scroll;
 }
 
 .content {
   font-family: 'Noto Sans Mono', monospace;
-  line-height: 1.5;
+  line-height: 1.4;
   max-width: 80ch;
-  letter-spacing: -.025em;
+  letter-spacing: -.05em;
   margin-left: auto;
   margin-right: auto;
 
@@ -24,11 +25,6 @@ body {
   line-height: 0em;
 }
 
-.entry {
-  border-radius: 1em;
-  padding-bottom: 0.1em;
-}
-
 .entry_prefix {
   /* background-color:chartreuse; */
   /* border-radius: 1ch; */
@@ -37,26 +33,53 @@ body {
   /* left: -1ch; */
 }
 
+.entry {
+  border-radius: 1em;
+  margin-top: 1em;
+  padding-left: 1ch;
+  padding-right: 1ch;
+  width: min;
+  padding-bottom: 0.1em;
+  margin-bottom: 0.5em;
+}
+
 .new_task_entry {
-  background-color:#4361ee;
+  background-color:#0496ff;
+  color: #f9f9f9;
+}
+
+.info_entry {
+  background-color:#8e9aaf;
+  color: #f9f9f9;
+}
+
+.cancel_entry {
+  background-color: #EA5460;
   color: #f9f9f9;
 }
 
 #input_field {
-  background-color: #1e1e1e;
-  color:azure;
+  background-color: #fbfbfe;
+  border-width: 2px;
+  border-color: #eee;
+  /* color:azure; */
   
-  outline: 1px solid;
-  outline-color:black;
+  /* outline: 1px solid; */
+  /* outline-color:black; */
+
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
   
-  padding: .5em;
-  border-radius: .2em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 2ch;
 
   box-sizing: border-box;
   resize: none;
 }
 
 #input_field:focus {
-  outline: 1px solid;
-  outline-color: cadetblue;
+  background-color: #fff;
+  outline: 1px transparent;
 }
