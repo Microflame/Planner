@@ -1,14 +1,68 @@
+:root {
+  --blue-0: #eff6fc;
+  --blue-1: #e0eef9;
+  --blue-2: #c1ddf4;
+  --blue-3: #a1cbee;
+  --blue-4: #82bae9;
+  --blue-5: #63a9e3;
+  --blue-6: #5998cc;
+  --blue-7: #45769f;
+  --blue-8: #325572;
+  --blue-9: #1e3344;
+  --blue-10: #14222d;
+
+  --grey-0: #f3f3f3;
+  --grey-1: #e7e7e7;
+  --grey-2: #dbdbdb;
+  --grey-3: #c4c4c4;
+  --grey-4: #acacac;
+  --grey-5: #949494;
+  --grey-6: #888888;
+  --grey-7: #6d6d6d;
+  --grey-8: #525252;
+  --grey-9: #363636;
+  --grey-10: #1b1b1b;
+
+  --green-0: #e0f9e0;
+  --green-1: #c1f4c1;
+  --green-2: #a3eea1;
+  --green-3: #84e982;
+  --green-4: #65e363;
+  --green-5: #5bcc59;
+  --green-6: #479f45;
+  --green-7: #337232;
+  --green-8: #1e441e;
+  --green-9: #0a170a;
+
+  --light-red: #F2AAAA;
+  --dark-red: #E36387;
+}
+
 body {
   margin: 5ch;
   overflow-y: scroll;
+  min-width:min-content;
+}
+
+.edit_btn:hover {
+  color: var(--blue-9);
 }
 
 .content {
-  font-family: 'Noto Sans Mono', monospace;
-  font-size: small;
-  line-height: 1.4;
+  /* font-family: 'Noto Sans Mono', monospace; */
+  font-family: Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;;
+  /* font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+  
+  font-size: medium;
+  line-height: 1.45;
   max-width: 80ch;
-  letter-spacing: -.05em;
+  letter-spacing: -.005em;
   margin-left: auto;
   margin-right: auto;
 
@@ -18,8 +72,18 @@ body {
 }
 
 .day_info {
-  margin-bottom: 1em;
-  margin-left: 2em;
+  margin-bottom: 3em;
+}
+
+.day_date {
+  font-size: 1.7em;
+  color: var(--grey-3);
+}
+
+.edit_btn {
+  text-decoration: underline;
+  color: var(--grey-8);
+  font-weight: 500;
 }
 
 .empty_line {
@@ -27,36 +91,63 @@ body {
 }
 
 .entry_prefix {
-  /* background-color:chartreuse; */
-  /* border-radius: 1ch; */
-  /* padding-left: 1em; */
-  /* position: relative; */
-  /* left: -1ch; */
+  padding-left: 1ch;
+  padding-right: 0.2ch;
 }
 
 .entry {
-  border-radius: 1em;
+  /* border-radius: 5px; */
+  border-left: 3px solid;
   margin-top: 1em;
-  padding-left: 1ch;
   padding-right: 1ch;
   width: min;
-  padding-bottom: 0.1em;
+  padding-bottom: 0.3em;
+  padding-top: 0.2em;
   margin-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 1.05em;
+  letter-spacing: 0;
+  color: var(--grey-8);
 }
 
 .new_task_entry {
-  background-color:#0496ff;
-  color: #f9f9f9;
+  border-color: var(--blue-5);
+}
+
+.new_task_entry:hover {
+  cursor: pointer;
 }
 
 .info_entry {
-  background-color:#8e9aaf;
-  color: #f9f9f9;
+  border-color: var(--grey-2);
+}
+
+.info_entry:hover {
+  cursor: pointer;
+}
+
+.completed_task_entry {
+  border-color: var(--blue-1);
+}
+
+.completed_task_entry:hover {
+  cursor: pointer;
 }
 
 .cancel_entry {
-  background-color: #EA5460;
-  color: #f9f9f9;
+  border-color: var(--light-red);
+}
+
+.cancel_entry:hover {
+  cursor: pointer;
+}
+
+.complete_entry {
+  border-color: var(--green-4);
+}
+
+.complete_entry:hover {
+  cursor: pointer;
 }
 
 #input_field {
@@ -112,6 +203,7 @@ body {
 
 .calendar {
   max-width: max-content;
+  min-width: 360px;
   font-family: sans-serif;
   line-height: 1.5;
   letter-spacing: 0;
@@ -141,21 +233,23 @@ body {
   width: 8ch;
   height: 8ch;
   background-color: transparent;
+  border-radius: 1ch;
   /* text-align:start; */
   /* vertical-align: top; */
   /* border-style: solid; */
   /* border-color: #014d40; */
   /* border-width: 1px; */
-  box-shadow:0 0 0 2px var(--blue-grey-050);
+  /* box-shadow:0 0 0 2px var(--blue-grey-050); */
 }
 .calendar__day_box:hover {
-  background-color: var(--blue-grey-050);
+  background-color: var(--blue-0);
   cursor: pointer;
 }
 
 .calendar__day_num {
+  text-align: center;
   padding-top: .5ch;
-  padding-left: .5ch;
+  /* padding-left: .5ch; */
 }
 
 .calendar__other_mon {
@@ -163,25 +257,23 @@ body {
 }
 
 .calendar__day_info div {
-  /* font: .9em sans-serif; */
-  /* line-height: 1.3ch; */
+  text-align: center;
+  margin: auto;
+  font-size: 0.9em;
   line-height: 6px;
-  border-radius: 1ch;
-  margin-left: .2ch;
-  margin-right: .2ch;
   margin-top: .5ch;
 }
 
 .calendar__info__new {
-  background-color: #0496ff;
+  color: var(--blue-5);
 }
 
 .calendar__info__note {
-  background-color: #829ab1;
+  color: var(--grey-3);
 }
 
 .calendar__info__complete {
-  background-color: #3ebd93;
+  color: var(--green-4);
 }
 
 .calendar__day_tooltip_root {
