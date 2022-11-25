@@ -96,22 +96,36 @@ body {
 }
 
 .entry {
-  /* border-radius: 5px; */
-  border-left: 3px solid;
   margin-top: 1em;
-  padding-right: 1ch;
-  width: min;
-  padding-bottom: 0.3em;
-  padding-top: 0.2em;
-  margin-bottom: 0.5em;
+  margin-bottom: .75em;
   font-weight: 600;
   font-size: 1.05em;
   letter-spacing: 0;
   color: var(--grey-8);
+  display: flex;
+}
+
+.entry_content {
+  vertical-align: middle;
+  margin: auto;
+  padding-bottom: 0.4em;
+  padding-top: 0.3em;
+  flex: 1;
+}
+
+.entry_mark {
+  min-width: .4em;
+  max-width: .4em;
+  border-radius: .25em 0 0 .25em;
+  flex: 1;
 }
 
 .new_task_entry {
-  border-color: var(--blue-5);
+  border-left: none;
+}
+
+.new_task_entry_mark {
+  background-color: var(--blue-5);
 }
 
 .new_task_entry:hover {
@@ -122,12 +136,20 @@ body {
   border-color: var(--grey-2);
 }
 
+.info_entry_mark {
+  background-color: var(--grey-2);
+}
+
 .info_entry:hover {
   cursor: pointer;
 }
 
 .completed_task_entry {
   border-color: var(--blue-1);
+}
+
+.completed_task_entry_mark {
+  background-color: var(--blue-1);
 }
 
 .completed_task_entry:hover {
@@ -138,12 +160,20 @@ body {
   border-color: var(--light-red);
 }
 
+.cancel_entry_mark {
+  background-color: var(--light-red);
+}
+
 .cancel_entry:hover {
   cursor: pointer;
 }
 
 .complete_entry {
   border-color: var(--green-4);
+}
+
+.complete_entry_mark {
+  background-color: var(--green-4);
 }
 
 .complete_entry:hover {
