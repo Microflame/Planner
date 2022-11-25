@@ -12,7 +12,7 @@
 <title>Planner</title>
 </head>
 
-<body onclick="logScrollInfo()">
+<body onclick="onClick()">
     <div class="content">
         <div class="day_info">
             <div class="day_date">Monday, Nov 07 2022</div>
@@ -75,7 +75,7 @@
 
 
         <div style="position: relative;">
-            <!-- <div style="position: absolute; top: 150px; left: 0px; width: 100px;  height: 100px; background: red;"></div> -->
+            <div id="marker"></div>
             <textarea oninput="onMainInput(this)" id="input_field"></textarea>
         </div>
 

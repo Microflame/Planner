@@ -184,10 +184,6 @@ body {
   background-color: #fbfbfe;
   border-width: 2px;
   border-color: #eee;
-  /* color:azure; */
-  
-  /* outline: 1px solid; */
-  /* outline-color:black; */
 
   font-family: inherit;
   font-size: inherit;
@@ -204,6 +200,15 @@ body {
 #input_field:focus {
   background-color: #fff;
   outline: 1px transparent;
+}
+
+#marker {
+  position: absolute;
+  top: calc(16px + 0 * 21px);
+  left: 0px;
+  width: 10em;
+  height: 1em;
+  background: blue;
 }
 
 

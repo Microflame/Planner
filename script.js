@@ -51,6 +51,11 @@ function logCursorPosition() {
     // console.log(text_area.selectionStart);
 }
 
+function onClick() {
+    let text_area = document.getElementById("input_field");
+    console.log(window.getComputedStyle(text_area).lineHeight);
+}
+
 let logCursorPositionDebounced = debounce(logCursorPosition, 500)
 
 // window.setInterval(logCursorPosition, 1000);
