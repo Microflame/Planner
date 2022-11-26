@@ -149,16 +149,10 @@ class AutocompleteData {
     }
 
     select() {
-        const prefix = this.text.substr(0, this.begin);
-        const suffix = this.text.substr(this.end);
         const infix = this.suggestions[this.select_idx].textContent;
-        const result = prefix + infix + suffix;
-
-        this.target_input.value = result;
-
-        const caret_pos = prefix.length + infix.length;
-        this.target_input.selectionStart = caret_pos;
-        this.target_input.selectionEnd = caret_pos;
+        this.target_input.selectionStart = this.begin;
+        this.target_input.selectionEnd = this.end;
+        document.execCommand('insertText', false, infix);
 
         this.clean();
     }
@@ -213,7 +207,7 @@ function handleAutocomplete(text_area) {
     let line_end = all_text.indexOf('\n', cursor_pos);
     line_end = line_end === -1 ? all_text.length : line_end;
 
-    const line = all_text.substr(line_start, line_end);
+    const line = all_text.substr(line_start, line_end - line_start);
 
     const ac_type = getAutocompleteType(line);
     if (ac_type === null)
@@ -222,7 +216,7 @@ function handleAutocomplete(text_area) {
     }
     else
     {
-        autocompleteData.load(line, all_text, line_start, cursor_pos);
+        autocompleteData.load(line, all_text, line_start, line_end);
     }
 }
 
@@ -235,10 +229,6 @@ function adjustHintMarker() {
     const text_area = document.getElementById("input_field");
     const line_num = text_area.value.substr(0, text_area.selectionStart).split("\n").length;
     const marker = document.getElementById("marker");
-    
-    {
-
-    }
     marker.style.setProperty('top', (-5 + line_num * 21) + "px");
 }
 
