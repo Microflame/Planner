@@ -11,7 +11,7 @@
   --blue-9: #1e3344;
   --blue-10: #14222d;
 
-  --grey-0: #f3f3f3;
+  --grey-0: #fbfbfb;
   --grey-1: #e7e7e7;
   --grey-2: #dbdbdb;
   --grey-3: #c4c4c4;
@@ -195,6 +195,7 @@ body {
 
   box-sizing: border-box;
   resize: none;
+  white-space: pre-wrap;
 }
 
 #input_field:focus {
@@ -209,6 +210,37 @@ body {
   width: 10em;
   height: 1em;
   background: blue;
+}
+
+#autocomplete_suggestions {
+  border: none;
+  cursor: pointer;
+  /* visibility: hidden; */
+  position: absolute;
+}
+
+#autocomplete_suggestions ul {
+  list-style-type: none;
+  padding-left: 0px;
+
+  border-color: var(--grey-2);
+  border-style: solid;
+  border-width: 1px;
+  background-color: var(--grey-0);
+}
+
+#autocomplete_suggestions ul li {
+  padding: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#autocomplete_suggestions ul li:hover:not(.AS_highlight) {
+  background-color: var(--blue-1);
+}
+
+.AS_highlight {
+  background-color: var(--blue-5);
 }
 
 
