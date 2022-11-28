@@ -7,6 +7,7 @@ let autocompleteData = null;
 
 window.onload = () => {
     let text_area = document.getElementById("input_field");
+    maybeResizeHeight(text_area)
     text_area.addEventListener('beforeinput', (ev) => { beforeMainInput(text_area); });
     mainInputScrollHeight = text_area.scrollHeight;
 
@@ -118,6 +119,11 @@ class AutocompleteData {
     }
 
     addSuggestion(suggestion_text) {
+        if (this.list_root_element === null) {
+            this.list_root_element = document.createElement('ul');
+            this.root_element.appendChild(this.list_root_element);
+        }
+
         let li_elem = document.createElement('li');
         li_elem.textContent = suggestion_text;
         this.suggestions.push(li_elem);
@@ -135,10 +141,8 @@ class AutocompleteData {
 
         if (this.list_root_element !== null) {
             this.root_element.removeChild(this.list_root_element);
+            this.list_root_element = null;
         }
-
-        this.list_root_element = document.createElement('ul');
-        this.root_element.appendChild(this.list_root_element);
     }
 
     disable() {

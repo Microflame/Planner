@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="style.css">
+
+<title>Filter - Planner</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="day_info">
+            <div class="day_date">Filter:</div>
+            <a class="navigation_button" href="year.html">Year</a>
+            <a class="navigation_button" href="month.html">Month</a>
+            <a class="navigation_button" href="main.html">Today</a>
+        </div>
+
+        <form action="/main.html" method="get">
+            <label for="from-date">From:</label>
+            <br>
+            <input id="from-date" type="date" name="from-date" value="">
+            <br>
+            
+            <label for="to-date">To:</label>
+            <br>
+            <input id="to-date" type="date" name="to-date" value="">
+            <br>
+    
+            <input type="checkbox" id="form-open" name="form-open" value="Open" checked>
+            <label for="form-open">Open</label>
+            <br>
+    
+            <input type="checkbox" id="form-resolved" name="form-resolved" value="Resolved" checked>
+            <label for="form-resolved">Resolved</label>
+            <br>
+    
+            <input type="checkbox" id="form-cancelled" name="form-cancelled" value="Cancelled" checked>
+            <label for="form-cancelled">Cancelled</label>
+            <br>
+    
+            <input type="checkbox" id="form-note" name="form-note" value="Note" checked>
+            <label for="form-note">Note</label>
+            <br>
+
+            <input type="submit"/> 
+        </form>
+    </div>
+</body>
+</html>

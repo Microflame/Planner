@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet"> -->
+
+<title>Planner</title>
+</head>
+
+<body onclick="onClick()">
+    <div class="content">
+        <div class="day_info">
+            <div class="day_date">Edit: Monday, Nov 07 2022</div>
+            <a class="navigation_button" href="filter.html">Filter</a>
+            <a class="navigation_button" href="year.html">Year</a>
+            <a class="navigation_button" href="month.html">Month</a>
+            <a class="navigation_button" href="main.html" style="float: right;">View</a>
+        </div>
+        <div>
+            
+            <form action="/main.html">
+            <div style="position: relative;">
+                <textarea oninput="onMainInput(this)" id="input_field">
++ Сделать боковую панель
++ Сделать календарь
+Это простой текст
+Это еще одна сторка
+
+Это простой текст, но очень длинный.
+Он такой длинный, что даже не помещается в одну строку.
+Благобдаря этому мы можем смотреть на то, как работает автоперенос
+и лучше подбирать параметры отображения.
+
+# Это заметка. Самый простой элемент
+- Это отмена задачи
+* Это отметка о выполнении</textarea>
+
+                <div id="autocomplete_suggestions"></div>
+            </div>
+            <input id="input_field_submit_btn" type="Submit"/>
+            </form>
+        </div>
+
+    </div>
+    
+
+
+
+</body>
+
+</html>

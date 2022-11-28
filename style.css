@@ -38,19 +38,22 @@
   --dark-red: #E36387;
 }
 
+
+label {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
 body {
   margin: 5ch;
   overflow-y: scroll;
   min-width:min-content;
-}
+  font-family: Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 
-.edit_btn:hover {
-  color: var(--blue-9);
 }
 
 .content {
   /* font-family: 'Noto Sans Mono', monospace; */
-  font-family: Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;;
+  font-family: Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   /* font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -80,7 +83,7 @@ body {
   color: var(--grey-3);
 }
 
-.edit_btn {
+.navigation_button {
   text-decoration: underline;
   color: var(--grey-8);
   font-weight: 500;
@@ -184,6 +187,7 @@ body {
   background-color: #fbfbfe;
   border-width: 2px;
   border-color: #eee;
+  border-style: solid;
 
   font-family: inherit;
   font-size: inherit;
@@ -201,6 +205,22 @@ body {
 #input_field:focus {
   background-color: #fff;
   outline: 1px transparent;
+}
+
+#input_field_submit_btn {
+  margin-top: 1em;
+  background-color: var(--blue-5);
+  cursor: pointer;
+  padding: 1em 2em;
+  border: none;
+  color: white;
+  font-size: 1em;
+  border-radius: 1ch;
+  float: right;
+}
+
+#input_field_submit_btn:hover {
+  background-color: var(--blue-6);
 }
 
 #marker {
@@ -231,8 +251,12 @@ body {
 
 #autocomplete_suggestions ul li {
   padding: 1px;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+#autocomplete_suggestions ul li:not(.AS_highlight) {
+  border-left: 2px solid transparent;
 }
 
 #autocomplete_suggestions ul li:hover:not(.AS_highlight) {
@@ -240,7 +264,8 @@ body {
 }
 
 .AS_highlight {
-  background-color: var(--blue-5);
+  background-color: var(--blue-1);
+  border-left: 2px var(--blue-6) solid;
 }
 
 
@@ -269,7 +294,7 @@ body {
 }
 
 .calendar {
-  max-width: max-content;
+  /* max-width: max-content; */
   min-width: 360px;
   font-family: sans-serif;
   line-height: 1.5;
@@ -296,16 +321,34 @@ body {
   grid-gap: 2px;
 }
 
+.year_grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 2fr);
+  box-sizing: border-box;
+  grid-gap: 2px;
+  font-weight: 600;
+}
+
+.year_Q {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 2em;
+}
+
 .calendar__day_box {
-  width: 8ch;
+  display: block;
+  text-decoration: none;
+  color: var(--blue-9);
+  /* width: 8ch; */
   height: 8ch;
   background-color: transparent;
   border-radius: 1ch;
   /* text-align:start; */
   /* vertical-align: top; */
-  /* border-style: solid; */
-  /* border-color: #014d40; */
-  /* border-width: 1px; */
+  border-style: solid;
+  border-color: var(--blue-1);
+  border-width: 1px;
   /* box-shadow:0 0 0 2px var(--blue-grey-050); */
 }
 .calendar__day_box:hover {
