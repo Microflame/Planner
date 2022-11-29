@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="simple_style.css">
+    <script src="simple_script.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+    
+    <title>Planner</title>
+</head>
+
+<body>
+
+<div class="content">
+    <div class="header">
+        <div class="header_text">Monday, Nov 07 2022</div>
+        <div class="header_controls">
+            <!-- <a class="navigation_button" href="filter.html">Filter</a> -->
+            <a class="navigation_button" href="">Archive</a>
+            <!-- <a class="navigation_button" href="month.html">Month</a> -->
+            <!-- <a class="navigation_button" href="edit.html" style="float: right;">Edit</a> -->
+        </div>
+    </div>
+
+    <div class="footer">
+
+    <div id="autocomplete_suggestions"></div>
+    <form action="/main.html">
+        <!-- <div style="position: relative;"> -->
+            <textarea id="input_field">
++ Так будем отмечать задачу, которая была выполнена в последующем.
+- Так задачу, которую в последующем решили не делать.
+* Так будем отмечать факт выполения задачи.
+. Это создание новой, еще не решенной, задачи.
+
+Строчки без префикса используются для комментариев.
+В них могут встречаться тэги @Tag. По тэгам можно искать.</textarea>
+            <input id="input_field_submit_btn" type="Submit" value="Save"/>
+        <!-- </div> -->
+    </form>
+        
+    </div>
+</div>
+
+</body>
+
+</html>
