@@ -1,5 +1,6 @@
 "use strict"
 
+import {initMirrorDiv, getCaretCoordinates} from './textarea_caret_pos.js'
 
 function getScrollToBottom() {
     return window.innerHeight + window.pageYOffset - document.body.scrollHeight;
@@ -14,8 +15,9 @@ function scrollToBottom() {
 }
 
 class MainInputField {
-    constructor(input_field) {
+    constructor(input_field, autocomplete) {
         this.input_field = input_field;
+        this.autocomplete = autocomplete;
 
         this.HEIGHT_PADDING = 5;
         
@@ -24,6 +26,7 @@ class MainInputField {
         this.input_field.addEventListener('beforeinput', (ev) => { this._beforeMainInputFieldEdit(); });        
         this.input_field.addEventListener('input', (ev) => { this._onMainInputFieldEdit(); });
 
+        this.mirror_div = initMirrorDiv(this.input_field);
     }
 
     adjustHeight() {
@@ -31,6 +34,10 @@ class MainInputField {
         elem.style.height = "5px";
         elem.style.height = (elem.scrollHeight + this.HEIGHT_PADDING) + "px";
         console.log(elem.scrollHeight);
+    }
+
+    getCursorPos() {
+        return this.input_field.selectionStart;
     }
 
     _beforeMainInputFieldEdit() {
@@ -46,6 +53,10 @@ class MainInputField {
         }
     
         // handleAutocomplete(self);
+
+        let coords = getCaretCoordinates(this.input_field, this.mirror_div, this.getCursorPos());
+        this.autocomplete.style.left = coords.left + 'px';
+        this.autocomplete.style.top = (coords.top + coords.lineHeight) + 'px';
     }
 }
 
@@ -57,10 +68,11 @@ function focusInputFiled(input_field) {
 }
 
 function setupMainInputField() {
-    let input_field = document.getElementById("input_field");
-    input_field._CONTROLLER = new MainInputField(input_field);
+    let input_field = document.getElementById('input_field');
+    let autocomplete = document.getElementById('autocomplete_suggestions');
+    input_field._CONTROLLER = new MainInputField(input_field, autocomplete);
 
-    focusInputFiled(input_field);
+    // focusInputFiled(input_field);
 }
 
 function KeyPress(e) {
