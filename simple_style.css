@@ -122,7 +122,7 @@ body {
 #autocomplete_suggestions {
   border: none;
   cursor: pointer;
-  /* visibility: hidden; */
+  visibility: hidden;
   position: absolute;
 }
 
@@ -130,6 +130,7 @@ body {
   list-style-type: none;
   padding-left: 0px;
 
+  margin: 0px;
   border-color: var(--grey-2);
   border-style: solid;
   border-width: 1px;
@@ -153,4 +154,22 @@ body {
 .AS_highlight {
   background-color: var(--blue-1);
   border-left: 2px var(--blue-6) solid;
+}
+
+#pending_chages_indicator {
+  opacity: 0;
+}
+
+.fade_anim {
+  animation: fadeOut .1s ease-out;
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
 }

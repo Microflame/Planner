@@ -61,10 +61,6 @@ export function initMirrorDiv(element) {
     var computed = window.getComputedStyle ? window.getComputedStyle(element) : element.currentStyle;
     div.tcp__computedStyle = computed;
 
-    // // Default textarea styles
-    // style.whiteSpace = 'pre-wrap';
-    // style.wordWrap = 'break-word';
-
     // Position off-screen
     style.position = 'absolute';  // required to return coordinates properly
     style.visibility = 'hidden';  // not 'display: none' because we want rendering
@@ -87,12 +83,12 @@ export function initMirrorDiv(element) {
     return div;
 }
 
-export function getCaretCoordinates(element, mirror, position) {
+export function getCaretCoordinates(textBeforeCursor, textAfterCursor, mirror) {
     const computed = mirror.tcp__computedStyle;
-    mirror.textContent = element.value.substring(0, position);
+    mirror.textContent = textBeforeCursor;
 
     var tail = document.createElement('span');
-    tail.textContent = element.value.substring(position) || '.';
+    tail.textContent = textAfterCursor || '.';
     mirror.appendChild(tail);
 
     var coordinates = {
